@@ -15,7 +15,7 @@ function Activar(){}
 function Desactivar(){}
 
 
-register_activation_hook(__FILE__,Activar);
+ register_activation_hook(__FILE__,'Activar');
 
 
-register_activation_hook(__FILE__,Desactivar);
+ register_activation_hook(__FILE__,'Desactivar');
