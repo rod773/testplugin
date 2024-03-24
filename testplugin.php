@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * @pachage TestPlugin
+**/
 /*
-Plugin Name: Test Plugin
-Author: Rodrigo
-Description: Este es un plugin de prueba
-Version: 0.0.1
-
+ Plugin Name: Test Plugin
+ Descriptio: A test plugin
+ Version: 0.0.1
+ Plugin URI: http://testplugin.com/plugin
+ Author: Rodrigo
+ Author URI: http://testplugin.com
+ License: GLPv2 or later
+ Text Domain: test-plugin
 */
 
 
@@ -24,23 +30,23 @@ function Desactivar(){
 
  register_activation_hook(__FILE__,'Desactivar'); 
 
- add_action( 'admin_nenu', 'CrearMenu' );
+ add_action( 'admin_nenu', 'crear_menu' );
 
 
-function CrearMenu(){
+function crear_menu(){
     add_menu_page(
         'Super Encuestas', // Titulo de la página
         'Super Encuestas Menu', // Titulo del menu
         'manage_options', // Capability
-        'sp_menu', // Slug
-        'MostrarContenido', // función del contenido
-        plugin_dir_url( __FILE__ ).'admin/img/icon.png',
-        1
+        'test_menu_slug', // Slug
+        'mostrar_contenido', // función del contenido
+        plugin_dir_url( __FILE__ ).'/admin/img/icon.png',
+        '1'
     );
    
 }
 
 
-function MostrarContenido(){
+function mostrar_contenido(){
     echo "<h1>Contenido de la Página</h1>";
 }
