@@ -12,7 +12,10 @@ function Activar(){}
 
 
 
-function Desactivar(){}
+function Desactivar(){
+    flush_rewrite_rules();
+}
+
 
 
  register_activation_hook(__FILE__,'Activar');
